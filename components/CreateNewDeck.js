@@ -78,6 +78,12 @@ class CreateNewDeck extends Component {
 
     //navigate to deck list view
     navigation.goBack()
+    navigation.navigate(
+      'DeckView',
+      {
+        deckId: deckTitle,
+        deckTitle: deckTitle,
+    });
   }
 
   render() {

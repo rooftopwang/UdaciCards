@@ -27,7 +27,7 @@ function formatDeck (deckTitle) {
 export function addDeckData (deckTitle) {
   const deck = formatDeck(deckTitle)
   // adding new deck
-  AsyncStorage.mergeItem(DECK_STORAGE_KEY,JSON.stringify(deck))
+  AsyncStorage.mergeItem(DECK_STORAGE_KEY, JSON.stringify(deck))
 
   return deck
 }

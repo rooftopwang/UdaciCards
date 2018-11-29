@@ -75,19 +75,21 @@ class DeckList extends React.Component {
       // Listing all decks
       <ScrollView>
         {
-          deckArray.map((deck) => (
-            <Deck key = { decks[deck].title }
-              onPress={() => this.props.navigation.navigate(
-                'DeckView',
-                {
-                  deckId: deck,
-                  deckTitle: decks[deck].title,
-                })} >
-              <Title>{ decks[deck].title }</Title>
-              <CardCount>{ decks[deck].questions.length } cards</CardCount>
-              <Hint>Tap to open</Hint>
-            </Deck>
-          ))
+          deckArray.map((deck) => {
+            return (          
+              <Deck key = { decks[deck].title }
+                onPress={() => this.props.navigation.navigate(
+                  'DeckView',
+                  {
+                    deckId: deck,
+                    deckTitle: decks[deck].title,
+                  })} >
+                <Title>{ decks[deck].title }</Title>
+                <CardCount>{ decks[deck].questions.length } cards</CardCount>
+                <Hint>Tap to open</Hint>
+              </Deck>
+            );
+          })
         }
       </ScrollView>
     )
